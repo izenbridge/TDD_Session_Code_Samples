@@ -3,14 +3,8 @@ package com.tdd.code;
 
 public class ExpressionEvaluator {
 
-	public long addTwoInteger(String expression) {
-		int operatorposition = expression.indexOf("+");
-		long argumentOne = Long.parseLong(expression.substring(0,operatorposition));
-		long argumenttwo = Long.parseLong(expression.substring(operatorposition+1));
-		return argumentOne+argumenttwo;
-	}
-
-	public long addThreeInteger(String expression) {
+	public long evaluateAdd(String expression) {
+		// TODO Auto-generated method stub
 		long total =0;
 		int nextoperatorposition =0;
 		nextoperatorposition = expression.indexOf("+");
