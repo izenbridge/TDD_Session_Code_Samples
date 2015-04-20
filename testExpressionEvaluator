@@ -1,15 +1,24 @@
 package com.tdd.test;
+
 import static org.junit.Assert.*;
 import org.junit.Test;
 import com.tdd.code.ExpressionEvaluator;
 
-public class testExpressionEvaluator 
-{
+public class testExpressionEvaluator {
+
 	@Test
 	public void testAddTwoInteger() {
 		
 	ExpressionEvaluator stringEval = new ExpressionEvaluator();
 		long result = stringEval.addTwoInteger("3+5");
 		assertEquals(8L,result);
+	}
+	
+	@Test
+	public void testAddThreeInteger() {
+		
+	ExpressionEvaluator stringEval = new ExpressionEvaluator();
+		long result = stringEval.addThreeInteger("3+5+7");
+		assertEquals(15L,result);
 	}
 }
