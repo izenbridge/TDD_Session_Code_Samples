@@ -10,7 +10,7 @@ public class testExpressionEvaluator {
 	public void testAddTwoInteger() {
 		
 	ExpressionEvaluator stringEval = new ExpressionEvaluator();
-		long result = stringEval.addTwoInteger("3+5");
+		long result = stringEval.evaluateAdd("3+5");
 		assertEquals(8L,result);
 	}
 	
@@ -18,7 +18,16 @@ public class testExpressionEvaluator {
 	public void testAddThreeInteger() {
 		
 	ExpressionEvaluator stringEval = new ExpressionEvaluator();
-		long result = stringEval.addThreeInteger("3+5+7");
+		long result = stringEval.evaluateAdd("3+5+7");
 		assertEquals(15L,result);
 	}
+	
+	@Test
+	public void testAddManyInteger() {
+		
+	ExpressionEvaluator stringEval = new ExpressionEvaluator();
+		long result = stringEval.evaluateAdd("3+5+7+40");
+		assertEquals(55L,result);
+	}
+	
 }
