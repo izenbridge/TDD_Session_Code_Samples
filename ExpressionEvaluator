@@ -1,5 +1,6 @@
 package com.tdd.code;
 
+
 public class ExpressionEvaluator {
 
 	public long addTwoInteger(String expression) {
@@ -9,3 +10,29 @@ public class ExpressionEvaluator {
 		return argumentOne+argumenttwo;
 	}
 
+	public long addThreeInteger(String expression) {
+		long total =0;
+		int nextoperatorposition =0;
+		nextoperatorposition = expression.indexOf("+");
+		long argumentTwo;
+		// initilize the total with first argument of expression 
+		total = Long.parseLong(expression.substring(0,nextoperatorposition));
+		
+		while(nextoperatorposition>0)
+		{
+		int operatorposition = expression.indexOf("+");
+		expression = expression.substring(operatorposition+1);
+		nextoperatorposition = expression.indexOf("+");
+		
+		if (nextoperatorposition >0)
+		    argumentTwo = Long.parseLong(expression.substring(0,nextoperatorposition));
+		else argumentTwo = Long.parseLong(expression);
+		
+		total = total +  argumentTwo;
+		
+		}
+		return total;
+	}
+
+
+}
